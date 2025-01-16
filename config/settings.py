@@ -45,7 +45,9 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework_simplejwt',
     'drf_yasg',
-    'users'
+    'users',
+    'ads',
+    'django_filters'
 ]
 
 MIDDLEWARE = [
