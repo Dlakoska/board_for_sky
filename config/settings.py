@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'drf_yasg',
     'users',
     'ads',
-    'django_filters'
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -179,3 +179,4 @@ SIMPLE_JWT = {
 }
 
 FRONTEND_URL = "http://localhost:8000"
+
