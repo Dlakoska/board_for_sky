@@ -9,11 +9,6 @@ def api_client():
     return APIClient()
 
 
-@pytest.fixture(autouse=True)
-def reset_api_client():
-    return APIClient()
-
-
 @pytest.fixture
 def create_user():
     return User.objects.create(first_name='test', email='test@example.com', password='password123')
@@ -21,7 +16,7 @@ def create_user():
 
 @pytest.fixture
 def create_admin_user():
-    return User.objects.create(first_name='test',role=True, email='admin@example.com', password='adminpass')
+    return User.objects.create(first_name='test', role=True, email='admin@example.com', password='adminpass')
 
 
 @pytest.fixture

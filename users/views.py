@@ -14,6 +14,9 @@ from rest_framework import status
 
 
 class UserCreateAPIView(CreateAPIView):
+    """
+    Создание нового юзера
+    """
     serializer_class = UserSerializer
     queryset = User.objects.all()
     permission_classes = (AllowAny,)
@@ -30,6 +33,9 @@ User = get_user_model()
 
 
 class ResetPasswordView(APIView):
+    """
+    Создание ссылки для сброса пароля и ее отправка на почту
+    """
     permission_classes = (AllowAny,)
 
     def post(self, request):
@@ -55,6 +61,9 @@ class ResetPasswordView(APIView):
 
 
 class ResetPasswordConfirmView(APIView):
+    """
+    Сброс и присвоение нового пароля
+    """
     permission_classes = (AllowAny,)
 
     def post(self, request):
