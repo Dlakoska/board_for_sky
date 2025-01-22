@@ -10,6 +10,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 
 
 class AdsCreateAPIView(CreateAPIView):
+    """Создание объявления"""
     serializer_class = AdsSerializer
     permission_classes = [IsAuthenticated,]
 
@@ -18,6 +19,7 @@ class AdsCreateAPIView(CreateAPIView):
 
 
 class AdsListAPIView(ListAPIView):
+    """Просмотр списка объявлений"""
     queryset = Ads.objects.all()
     serializer_class = AdsSerializer
     permission_classes = [AllowAny,]
@@ -27,24 +29,28 @@ class AdsListAPIView(ListAPIView):
 
 
 class AdsDetailAPIView(RetrieveAPIView):
+    """Просмотр одного объявления"""
     queryset = Ads.objects.all()
     serializer_class = AdsSerializer
     permission_classes = [IsAuthenticated,]
 
 
 class AdsUpdateAPIView(UpdateAPIView):
+    """Изменение объявления"""
     queryset = Ads.objects.all()
     serializer_class = AdsSerializer
     permission_classes = [IsAdminOrAuthor,]
 
 
 class AdsDeleteAPIView(DestroyAPIView):
+    """Удаление объявления"""
     queryset = Ads.objects.all()
     serializer_class = AdsSerializer
     permission_classes = [IsAdminOrAuthor,]
 
 
 class CommentCreateAPIView(CreateAPIView):
+    """Создание комментария"""
     serializer_class = CommentSerializer
     permission_classes = [IsAuthenticated, ]
 
@@ -55,12 +61,14 @@ class CommentCreateAPIView(CreateAPIView):
 
 
 class CommentDetailUpdateDeliteAPIView(RetrieveUpdateDestroyAPIView):
+    """Создание, изменение, удаление комментария"""
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
     permission_classes = [IsAdminOrAuthor]
 
 
 class CommentListAPIView(ListAPIView):
+    """Просмотр списка комментариев"""
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
     permission_classes = [AllowAny, ]
